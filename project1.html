@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rafik Ibrahim - Electrical Design Engineer - Residential Tower Distribution System - Full Technical Case Study" />
+  <meta name="keywords" content="Electrical Engineering, AutoCAD Electrical, DIALux Evo, Power Distribution, Panel Scheduling, Load Estimation, Voltage Drop, Short Circuit Analysis, IEC Standards, NEC, Building Services, MEP Design" />
+  <meta name="author" content="Rafik Ibrahim" />
+  <title>Residential Electrical Design | Rafik Ibrahim</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ========================================
+       PREMIUM ENGINEERING PORTFOLIO THEME
+       ========================================
+    */
+    :root {
+      --bg-deep: #020204;
+      --bg-panel: #0a0a0c;
+      --bg-card: #111116;
+      --accent-cyan: #00f2ff;
+      --accent-gold: #ffd700;
+      --accent-green: #00ff88;
+      --text-primary: #ffffff;
+      --text-secondary: #b0b0b0;
+      --text-dim: #707080;
+      --border-light: rgba(255, 255, 255, 0.08);
+      --code-bg: #1e1e24;
+      --code-text: #a9b7c6;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: var(--bg-deep);
+      color: var(--text-primary);
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.8;
+      overflow-x: hidden;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    /* TYPOGRAPHY */
+    h1, h2, h3, h4, h5, h6 { font-weight: 700; color: #fff; line-height: 1.3; margin-bottom: 1rem; }
+    
+    h3 {
+      font-size: 3.5rem;
+      text-align: center;
+      background: linear-gradient(135deg, #fff 0%, #a0a0b0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 60px 0 30px;
+      letter-spacing: -0.02em;
+    }
+
+    /* Section Headers */
+    h4 {
+      font-size: 2.2rem;
+      color: var(--accent-cyan);
+      margin-top: 100px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+    }
+    h4::before {
+      content: "||";
+      margin-right: 15px;
+      color: var(--accent-gold);
+      font-size: 1.5rem;
+    }
+
+    /* Sub-headers inside phases */
+    h5 { 
+      font-size: 1.5rem; 
+      color: #fff; 
+      margin-top: 0; 
+      margin-bottom: 20px; 
+      border-left: 4px solid var(--accent-cyan);
+      padding-left: 15px;
+    }
+    
+    h6 { 
+      font-size: 1.1rem; 
+      color: var(--accent-gold); 
+      text-transform: uppercase; 
+      letter-spacing: 0.05em; 
+      margin-top: 30px; 
+      border-bottom: 1px dashed var(--border-light);
+      padding-bottom: 5px;
+      display: inline-block;
+    }
+
+    p, li { color: var(--text-secondary); margin-bottom: 15px; font-size: 1.05rem; }
+    strong { color: #fff; font-weight: 600; }
+
+    a { text-decoration: none; transition: 0.3s; }
+
+    /* LAYOUT */
+    .container { max-width: 1400px; margin: 0 auto; padding: 0 40px 100px; }
+    
+    /* NAVBAR */
+    .navbar {
+      background: rgba(2, 2, 4, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-light);
+      padding: 25px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 40px;
+    }
+    .nav-name {
+      font-weight: 800;
+      font-size: 1.6rem;
+      background: linear-gradient(90deg, #fff, var(--accent-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .navbar nav a { 
+      color: var(--text-secondary); 
+      margin-left: 40px; 
+      font-weight: 500; 
+      font-size: 1rem;
+      text-decoration: none;
+    }
+    .navbar nav a:hover, .navbar nav a.active { color: var(--accent-cyan); }
+
+    /* HERO IMAGE */
+    .intro-image-container {
+      width: 100%;
+      margin: 50px 0;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border-light);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+      position: relative;
+    }
+    .intro-image-container img { width: 100%; display: block; }
+
+    /* --- PHASE BLOCK (SIDE BY SIDE LAYOUT) --- */
+    .phase-block {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr; /* Text Area vs Image Area */
+      gap: 60px;
+      margin-bottom: 100px;
+      background: var(--bg-card);
+      padding: 50px;
+      border-radius: 20px;
+      border: 1px solid var(--border-light);
+      transition: transform 0.3s ease;
+    }
+    
+    .phase-block:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 242, 255, 0.2);
+    }
+
+    .phase-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .phase-media {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .phase-media img, .phase-media video {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid #333;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .media-caption {
+      text-align: center;
+      color: var(--accent-cyan);
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-top: -15px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border-light);
+    }
+
+    /* Alternate Layout */
+    .phase-block.alternate {
+      grid-template-columns: 1.3fr 1fr;
+    }
+    .phase-block.alternate .phase-text { order: 2; }
+    .phase-block.alternate .phase-media { order: 1; }
+
+    /* Text-Only Block */
+    .phase-block.text-only {
+      display: block;
+      padding: 50px;
+    }
+
+    /* LIST STYLES */
+    ul.tech-list {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 15px;
+    }
+    ul.tech-list li {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+    ul.tech-list li::before {
+      content: "▹";
+      color: var(--accent-gold);
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    /* DATA BOXES (Code/Math style) */
+    .data-box {
+      background: rgba(255, 215, 0, 0.05);
+      border-left: 4px solid var(--accent-gold);
+      padding: 25px;
+      margin: 25px 0;
+      border-radius: 0 8px 8px 0;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.9rem;
+      color: #e0e0e0;
+      line-height: 1.7;
+    }
+
+    /* REFERENCE TAGS */
+    .ref-tag {
+      display: block;
+      margin-top: 20px;
+      padding: 12px 15px;
+      background: rgba(0, 242, 255, 0.05);
+      border-left: 3px solid var(--accent-cyan);
+      color: var(--text-dim);
+      font-size: 0.85rem;
+      font-family: 'Fira Code', monospace;
+    }
+    .ref-tag strong { color: var(--accent-cyan); }
+
+    /* SPEC TABLES */
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      font-size: 0.9rem;
+      border: 1px solid var(--border-light);
+      background: var(--bg-panel);
+    }
+    .spec-table th {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 15px;
+      text-align: left;
+      color: var(--accent-cyan);
+      border-bottom: 1px solid var(--border-light);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .spec-table td {
+      padding: 15px;
+      border-bottom: 1px solid var(--border-light);
+      color: var(--text-secondary);
+    }
+    .spec-table tr:last-child td { border-bottom: none; }
+
+    /* DISCLAIMER */
+    .scope-banner {
+      background: linear-gradient(90deg, rgba(0, 242, 255, 0.08), transparent);
+      border-left: 5px solid var(--accent-cyan);
+      padding: 40px;
+      margin: 60px 0;
+      border-radius: 4px;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 80px 0;
+      border-top: 1px solid var(--border-light);
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      margin-top: 150px;
+    }
+
+    @media (max-width: 1100px) {
+      .phase-block, .phase-block.alternate { grid-template-columns: 1fr; gap: 40px; }
+      .phase-text { order: 1 !important; }
+      .phase-media { order: 2 !important; }
+      h3 { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="nav-name">Rafik Ibrahim</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="projects.html" class="active">Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    
+    <h3>Low Voltage Residential Electrical Distribution & Lighting Design</h3>
+
+    <div class="intro-image-container">
+      <img src="images/Low%20Voltage%20Residential%20Electrical%20Distribution%20&%20Lighting%20Design/Low%20Voltage%20Residential%20Electrical%20Distribution%20&%20Lighting%20Design.png" alt="Main Distribution Layout Level 1">
+    </div>
+
+    <section>
+      <h4>1. Executive Summary & Engineering Scope</h4>
+      <p>
+        <strong>Project Context:</strong> The "Matrouh Residential Tower" is a high-density vertical development project. The structure features a complex load profile, integrating a Commercial Ground Floor with <strong>six typical residential floors</strong> and a Roof Services level. This project was not a simple drafting exercise; it was a comprehensive Systems Engineering challenge requiring the coordination of Lighting, Power, and HVAC loads into a unified, code-compliant infrastructure.
+      </p>
+      <p>
+        <strong>Technical Standards:</strong> The design philosophy was grounded in rigorous compliance. I utilized the <strong>Egyptian Code for Electrical Installations</strong> for local regulation adherence and <strong>IEC 60364 Standards</strong> for international best practices. All calculations—from cable derating to short-circuit withstand ratings—were cross-referenced with <em>Dr. Mahmoud Gilany’s "Electrical Installations Reference"</em> and technical specifications from the <em>Elsewedy Cables Catalog</em>.
+      </p>
+      
+      <div class="scope-banner">
+        <h5 style="margin-top: 0; font-size: 1.2rem; color: var(--accent-cyan); border: none; padding: 0;">⚠️ Scope & Sample Verification</h5>
+        <p style="margin-bottom: 0;">
+          The engineering package covers the complete infrastructure for the entire building (Ground + 6 Floors + Roof). However, the visual documentation provided in this portfolio serves as a deep-dive into <strong>Level 1 (Typical Floor)</strong>. This floor contains five distinct apartment units and serves as the template for the rigorous design standards, layering protocols, and calculation methodologies applied to the entire building complex.
+        </p>
+      </div>
+    </section>
+
+    <section class="phase-block text-only" style="display: block;">
+      <div class="phase-text">
+        <h5>Phase 1: Project Architecture & Standardization</h5>
+        <p>
+          A robust engineering project begins with data structure. Before drawing a single cable, I established a rigorous file management protocol based on the industry-standard "Project Tree" methodology.
+        </p>
+        
+        <h6>1.1 File Management & Version Control</h6>
+        <p>
+          I segregated the project environment into <strong>IN</strong> folders (for received XREFs from Architecture and Mechanical disciplines) and <strong>OUT</strong> folders (for Electrical deliverables). This prevented version conflicts and ensured that I was always designing on the latest architectural footprint.
+        </p>
+
+        <h6>1.2 Architectural Cleaning Protocol</h6>
+        <p>
+          Received architectural backgrounds often contain excessive visual noise (hatching, furniture details, decorative dimensions). I performed a rigorous cleaning process:
+        </p>
+        <ul class="tech-list">
+          <li><strong>Explosion:</strong> Exploded nested blocks to access primitive geometry.</li>
+          <li><strong>Purge:</strong> Removed unused layers and line types to reduce file size.</li>
+          <li><strong>Layer Management:</strong> Assigned all architectural elements to a unified <strong>Background Layer (Color 252 - Gray)</strong>. This layer was locked to prevent accidental modification.</li>
+        </ul>
+        <div class="ref-tag">
+          <strong>Ref:</strong> AutoCAD Standards for Engineering Documentation.
+        </div>
+      </div>
+    </section>
+
+    <section class="phase-block alternate">
+      <div class="phase-text">
+        <h5>Phase 2: Computational Lighting Design</h5>
+        <p>
+          I rejected the "Rule of Thumb" approach in favor of computational verification. Using <strong>DIALux Evo</strong>, I simulated the entire floor plate to ensure every room met the lux levels required by the code.
+        </p>
+        
+        <h6>2.1 Simulation Parameters</h6>
+        <div class="data-box">
+          <strong>Input Variables:</strong><br>
+          • Maintenance Factor (MF): 0.8 (LED depreciation)<br>
+          • Work Plane: 0.75m (Standard desk height)<br>
+          • Wall Reflection: 50% | Ceiling: 70% | Floor: 20%
+        </div>
+
+        <h6>2.2 Photometric Analysis</h6>
+        <p>
+          I integrated the <strong>Philips Lighting Plugin</strong> to select high-efficacy LED fixtures.
+        </p>
+        <ul class="tech-list">
+          <li><strong>Reception:</strong> 150-200 Lux (Warm White 3000K).</li>
+          <li><strong>Kitchens:</strong> 300-500 Lux (Cool White 4000K) for safety.</li>
+          <li><strong>Uniformity (U0):</strong> > 0.4 achieved in all zones.</li>
+        </ul>
+        <div class="ref-tag">
+          <strong>Ref:</strong> Egyptian Code for Interior Lighting & IEC 60364-5-52.
+        </div>
+      </div>
+      <div class="phase-media">
+        <img src="images/Low%20Voltage%20Residential%20Electrical%20Distribution%20&%20Lighting%20Design/dialux%20lighting%20system%20Level%201.png" alt="DIALux Flux Plan">
+        <div class="media-caption">Fig 2.1: DIALux Heatmap confirming lux compliance.</div>
+        
+        <video controls autoplay loop muted playsinline>
+          <source src="images/Low%20Voltage%20Residential%20Electrical%20Distribution%20&%20Lighting%20Design/dialux%20room%20Visualization.mp4" type="video/mp4">
+        </video>
+        <div class="media-caption">Fig 2.2: 3D Visualization showing shadow casting.</div>
+      </div>
+    </section>
+
+    <section class="phase-block">
+      <div class="phase-text">
+        <h5>Phase 3: Lighting Layout & Circuiting</h5>
+        <p>
+          Once photometric calculations were approved, I exported the fixture coordinates back to AutoCAD Electrical to finalize the construction drawings.
+        </p>
+        
+        <h6>3.1 Standardization (The Legend)</h6>
+        <p>
+          The image on the right (Fig 3.2) shows the <strong>Project Standard Legend</strong>. I adhered strictly to these symbols to ensure that site engineers and contractors had zero ambiguity regarding mounting heights, lamp types, and IP ratings.
+        </p>
+
+        <h6>3.2 Circuit Reliability Logic</h6>
+        <p>
+          I applied a strict <strong>Circuit Segmentation Strategy</strong>:
+          <br>No more than <strong>3 rooms</strong> were placed on a single lighting circuit. This ensures that if a breaker trips due to a fault in one room, the entire apartment does not plunge into darkness—reliability through segmentation.
+        </p>
+
+        <div class="data-box">
+          <strong>Load Calculation:</strong><br>
+          Constraint: Max Load per Circuit < 1200 VA.<br>
+          Protection: 10A / C-Curve Breaker.<br>
+          Wiring: 3x3mm² Cu/PVC wires in 20mm conduit.
+        </div>
+        <div class="ref-tag">
+          <strong>Ref:</strong> Egyptian Code Vol. 4 (Installations) - Max Circuit Load 1200 VA.
+        </div>
+      </div>
+      <div class="phase-media">
+        <img src="images/Low%20Voltage%20Residential%20Electrical%20Distribution%20&%20Lighting%20Design/Lighting%20system%20legend.png" alt="Lighting Legend">
+        <div class="media-caption">Fig 3.1: Project Lighting Legend (Standards Adherence).</div>
+
+        <img src="images/Low%20Voltage%20Residential%20Electrical%20Distribution%20&%20Lighting%20Design/Lighting%20system%20level%201.png" alt="Lighting Layout">
+        <div class="media-caption">Fig 3.2: Final AutoCAD Lighting Plan showing loop-in wiring.</div>
+      </div>
+    </section>
+
+    <section class="phase-block alternate">
+      <div class="phase-text">
+        <h5>Phase 4: Power Distribution Strategy</h5>
+        <p>
+          The power layout was engineered to balance user convenience with strict safety codes. I adhered to the "Furniture Layout" method to place sockets where they are actually needed.
+        </p>
+
+        <h6>4.1 Socket Placement & Heights</h6>
+        <ul class="tech-list">
+          <li><strong>General Sockets:</strong> 30cm AFFL.</li>
+          <li><strong>Wet Area Sockets:</strong> 120cm AFFL (Away from water).</li>
+          <li><strong>AC Isolators:</strong> 180cm AFFL (High wall).</li>
+        </ul>
+
+        <h6>4.2 The "3.6 Meter Rule"</h6>
+        <p>
+          I enforced the spacing rule: no point along a wall can be more than 1.8m from an outlet. This effectively means placing sockets every 3.6m to minimize the use of dangerous extension cords.
+        </p>
+        <div class="ref-tag">
+          <strong>Ref:</strong> Egyptian Code for Electrical Installations - Part 3 (Socket Distribution).
+        </div>
+      </div>
+      <div class="phase-media">
+        <img src="images/Low%20Voltage%20Residential%20Electrical%20Distribution%20&%20Lighting%20Design/Power%20System%20level%201.png" alt="Power Layout">
+        <div class="media-caption">Fig 4.1: Small Power Plan showing General & Kitchen Circuits.</div>
+      </div>
+    </section>
+
+    <section class="phase-block">
+      <div class="phase-text">
+        <h5>Phase 5: Mechanical Load Coordination</h5>
+        <p>
+          Electrical design cannot exist in a vacuum. I coordinated extensively with the HVAC drawings to ensure every mechanical unit had robust power delivery.
+        </p>
+
+        <h6>5.1 Heavy Duty Isolation</h6>
+        <p>
+          I placed dedicated <strong>Double Pole (DP) Switches</strong> (20A/32A) adjacent to every Split AC unit and Electric Water Heater. 
+          <br><em>Engineering Reason:</em> This provides a local point of isolation, allowing maintenance personnel to safely service the unit without accessing the main panel.
+        </p>
+
+        <h6>5.2 Environmental Protection</h6>
+        <p>
+          Specified <strong>IP55 Weatherproof Isolators</strong> for balcony units and <strong>IP65 Isolators</strong> for Roof units to prevent water ingress faults.
+        </p>
+        <div class="ref-tag">
+          <strong>Ref:</strong> IEC 60529 (IP Ratings) & Egyptian Code for Local Isolation.
+        </div>
+      </div>
+      <div class="phase-media">
+        <img src="images/Low%20Voltage%20Residential%20Electrical%20Distribution%20&%20Lighting%20Design/Mechanical%20Power%20System%20level%201.png" alt="Mechanical Power">
+        <div class="media-caption">Fig 5.1: Mechanical Power Connections (AC & Heaters).</div>
+        <img src="images/Low%20Voltage%20Residential%20Electrical%20Distribution%20&%20Lighting%20Design/Mechanical%20Power%20legend.png" alt="Mechanical Legend" style="margin-top: 15px;">
+        <div class="media-caption">Fig 5.2: Mechanical Power Legend specifying Isolator ratings.</div>
+      </div>
+    </section>
+
+    <section class="phase-block alternate">
+      <div class="phase-text">
+        <h5>Phase 6: Load Calculation & Panel Scheduling</h5>
+        <p>
+          This was the most mathematically intensive phase. I utilized advanced Excel schedules to size the breakers and calculate the Total Demand Load for the building.
+        </p>
+
+        <h6>6.1 Breaker Sizing & Diversity</h6>
+        <p>
+          Sized MCBs using a 1.25 safety factor. Applied IEC Diversity Factors to avoid oversizing the transformer.
+        </p>
+        <table class="spec-table">
+          <tr>
+            <th>Load Type</th>
+            <th>Design Current</th>
+            <th>Breaker</th>
+            <th>Diversity Factor</th>
+          </tr>
+          <tr>
+            <td>Lighting</td>
+            <td>~4-5 A</td>
+            <td>10A (C-Curve)</td>
+            <td>0.66</td>
+          </tr>
+          <tr>
+            <td>Sockets</td>
+            <td>~8-10 A</td>
+            <td>16A (C-Curve)</td>
+            <td>0.40</td>
+          </tr>
+          <tr>
+            <td>Split AC</td>
+            <td>~7 A</td>
+            <td>20A (D-Curve)</td>
+            <td>1.00 (None)</td>
+          </tr>
+        </table>
+
+        <h6>6.2 Phase Balancing</h6>
+        <p>
+          I balanced single-phase loads across Red, Yellow, and Blue phases to minimize neutral current.
+          <br><strong>Result:</strong> Imbalance < 1% (R: 10.8kVA, Y: 10.7kVA, B: 10.8kVA).
+        </p>
+        <div class="ref-tag">
+          <strong>Ref:</strong> Dr. Mahmoud Gilany - Electrical Installations Reference (Ch. Load Estimation).
+        </div>
+      </div>
+      <div class="phase-media">
+        <div class="data-box" style="margin-top: 0;">
+          <strong>Total Demand Load (Typical Floor):</strong><br>
+          Connected Load: 40.5 kVA<br>
+          Demand Load: 32.3 kVA<br>
+          Main Breaker: 100A 3-Phase MCCB
+        </div>
+      </div>
+    </section>
+
+    <section class="phase-block">
+      <div class="phase-text">
+        <h5>Phase 7: Infrastructure & Single Line Diagram</h5>
+        <p>
+          The final engineering step was designing the vertical backbone (Riser) that feeds all 6 floors.
+        </p>
+
+        <h6>7.1 Cable Selection & Derating Analysis</h6>
+        <p>
+          I selected <strong>Cu/XLPE/PVC</strong> cables from the <strong>Elsewedy Catalog</strong>. However, choosing cables based on "Air" rating is dangerous. I applied rigorous Derating Factors:
+        </p>
+        <div class="data-box">
+          <strong>Calculated Capacity (Iz) = I_table × K1 × K2</strong><br>
+          • K1 (Temp Factor): 0.9 (Ambient temp 40°C in shaft)<br>
+          • K2 (Grouping Factor): 0.8 (Multiple cables in one tray)<br>
+          <strong>Result:</strong> Sized main riser as <strong>4x35mm² + 16mm² Earth</strong>.
+        </div>
+
+        <h6>7.2 Voltage Drop Verification</h6>
+        <p>
+          Verified that voltage drop at the furthest socket (Level 6) remained below <strong>5%</strong>.
+          <br><em>Calculation:</em> Vd = (mV/A/m) × Ib × L / 1000 = 2.8% (PASSED).
+        </p>
+        <div class="ref-tag">
+          <strong>Ref:</strong> Elsewedy Cables Catalog (Technical Data Tables) & IEC 60287.
+        </div>
+      </div>
+      <div class="phase-media">
+        <img src="images/Low%20Voltage%20Residential%20Electrical%20Distribution%20&%20Lighting%20Design/single%20line%20diagram.png" alt="Single Line Diagram">
+        <div class="media-caption">Fig 7.1: Master Single Line Diagram (SLD) & Riser Schematic for 6 Floors.</div>
+      </div>
+    </section>
+
+    <section class="phase-block text-only" style="border-left: 5px solid var(--accent-gold); display: block;">
+      <div class="phase-text">
+        <h5>Phase 8: Bill of Quantities (BOQ)</h5>
+        <p>
+          The final deliverable was a precise BOQ to allow contractors to price the project accurately. I utilized AutoCAD Data Extraction to ensure < 2% variance.
+        </p>
+        <ul class="tech-list">
+          <li><strong>Cabling:</strong> Measured linear meters + 10% waste factor.</li>
+          <li><strong>Accessories:</strong> Automatic block attribute extraction for socket counts.</li>
+          <li><strong>Panels:</strong> Detailed specs for IP ratings (IP42 Indoor / IP65 Roof).</li>
+        </ul>
+        <div class="ref-tag">
+          <strong>Standard:</strong> Standard Method of Measurement (SMM) for Electrical Works.
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="container" style="padding: 0;">
+      <p>&copy; 2026 Rafik Ibrahim | Electrical Engineer</p>
+      <p style="font-size: 0.8rem; margin-top: 10px; color: var(--text-dim);">Designed & Engineered by Rafik Ibrahim</p>
+    </div>
+  </footer>
+
+</body>
+</html>

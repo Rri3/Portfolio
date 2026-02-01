@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rafik Ibrahim - Hardware Engineer - Bark It! Interactive Game" />
+  <title>Bark It! | Rafik Ibrahim</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ========================================
+       PREMIUM ENGINEERING PORTFOLIO THEME
+       ========================================
+    */
+    :root {
+      --bg-deep: #020204;
+      --bg-panel: #0f0f13;
+      --accent-cyan: #00f2ff;
+      --accent-orange: #ff9100; /* Orange for the playful nature of the project */
+      --accent-purple: #bd00ff;
+      --text-primary: #ffffff;
+      --text-secondary: #a0a0b0;
+      --border-light: rgba(255, 255, 255, 0.08);
+      --glass-surface: rgba(20, 20, 30, 0.7);
+    }
+
+    body {
+      background-color: var(--bg-deep);
+      color: var(--text-primary);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      line-height: 1.8;
+      margin: 0;
+      padding: 0;
+      background-image: 
+        radial-gradient(circle at 10% 10%, rgba(255, 145, 0, 0.03) 0%, transparent 20%),
+        radial-gradient(circle at 90% 90%, rgba(0, 242, 255, 0.03) 0%, transparent 20%);
+    }
+
+    /* TYPOGRAPHY */
+    h1, h2, h3, h4, h5 {
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-size: 3.5rem;
+      text-align: center;
+      background: linear-gradient(135deg, #fff 0%, #a0a0b0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+      margin-top: 40px;
+    }
+
+    h4 {
+      font-size: 1.8rem;
+      color: var(--accent-cyan);
+      margin-top: 80px;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border-light);
+      display: inline-block;
+    }
+
+    h5 {
+      font-size: 1.2rem;
+      color: var(--accent-orange);
+      margin-top: 0;
+    }
+
+    p, li {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    strong {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    /* LAYOUT CONTAINERS */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px 100px;
+    }
+
+    section {
+      position: relative;
+    }
+
+    /* INFO CARDS (Glassmorphism) */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 30px;
+      margin: 50px 0;
+    }
+
+    .card {
+      background: var(--glass-surface);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-light);
+      border-radius: 20px;
+      padding: 40px;
+      transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      border-color: rgba(255, 145, 0, 0.3);
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .card li {
+      padding-left: 25px;
+      position: relative;
+    }
+
+    .card li::before {
+      content: "▪";
+      color: var(--accent-cyan);
+      position: absolute;
+      left: 0;
+      top: -2px;
+      font-size: 1.5rem;
+    }
+
+    /* DATA TABLES */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--bg-panel);
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 30px 0;
+      border: 1px solid var(--border-light);
+    }
+
+    .data-table th, .data-table td {
+      padding: 20px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .data-table th {
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+    }
+
+    .data-table td {
+      color: var(--text-secondary);
+    }
+
+    .data-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* IMAGE GALLERY */
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .gallery-item {
+      background: var(--bg-panel);
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid var(--border-light);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      display: block;
+      transition: opacity 0.3s;
+    }
+
+    .caption {
+      margin-top: 15px;
+      color: var(--accent-cyan);
+      font-size: 0.9rem;
+      text-align: center;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    /* VIDEO CONTAINER */
+    .video-container {
+      text-align: center;
+      margin: 60px 0;
+      padding: 20px;
+      background: var(--glass-surface);
+      border-radius: 20px;
+      border: 1px solid var(--border-light);
+    }
+
+    .video-container video {
+      width: 45%; 
+      border-radius: 10px; 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    /* SKILLS TAGS */
+    .skill-tag {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-light);
+      padding: 8px 16px;
+      border-radius: 20px;
+      margin: 5px 5px 0 0;
+      font-size: 0.9rem;
+      color: var(--accent-cyan);
+    }
+
+    /* NAVIGATION */
+    .navbar {
+      background: rgba(2, 2, 4, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-light);
+      padding: 25px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 40px;
+    }
+
+    .nav-name {
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: #fff;
+    }
+
+    .navbar nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      margin-left: 40px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .navbar nav a:hover {
+      color: var(--accent-cyan);
+    }
+
+    @media (max-width: 900px) {
+      .image-gallery { grid-template-columns: 1fr; }
+      .video-container video { width: 100%; }
+      h3 { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="nav-name">Rafik Ibrahim</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="projects.html">Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    
+    <h3 style="margin-bottom: 40px;">Bark It! Interactive Sensor-Based Game</h3>
+
+    <section>
+      <h4>1. Project Overview & Competitive Edge</h4>
+      <p>
+        <strong>The Engineering Mission:</strong> Bark It! is a sensor-driven interactive game that brings the complexity of embedded systems to canine enrichment. Unlike standard toys, this project required designing a robust hardware system capable of interpreting physical commands—tugging, digging, and placing—in real-time. The goal was to build a device that provides mental and physical stimulation through an increasing difficulty curve, similar to the classic "Bop It" game.
+      </p>
+      <p>
+        <strong>System Complexity:</strong> This project simulates a competitive product development environment, moving from conceptual sketches to a fully integrated hardware prototype. It features a custom-designed PCB to manage multiple sensor inputs, an LCD for real-time score tracking, and an automated state-machine architecture that coordinates audio cues with user inputs. The system demonstrates the ability to integrate distinct hardware components into a unified, reliable product.
+      </p>
+    </section>
+
+    <section>
+      <div class="video-container">
+        <p style="color: #ccc; margin-bottom: 15px;">System Validation: Testing Sensor Response and Game Logic</p>
+        <video controls autoplay loop muted playsinline>
+          <source src="images/Bark_it/bark%20it.webm" type="video/webm">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </section>
+
+    <section>
+      <div class="tech-grid">
+        <div class="card">
+          <h5>My Role: Lead Hardware Engineer</h5>
+          <p>
+            I took ownership of the <strong>Hardware Design and Physical Integration</strong> phases. My focus was on creating a reliable electrical foundation that could support the game's logic.
+          </p>
+          <ul>
+            <li><strong>PCB Design:</strong> Transitioned the circuit from a complex breadboard prototype to a streamlined, custom Printed Circuit Board using Altium Designer.</li>
+            <li><strong>Sensor Optimization:</strong> Evaluated and selected input components (Joysticks, Limit Switches) based on reliability and signal stability.</li>
+            <li><strong>System Integration:</strong> Managed the wiring and layout within the laser-cut enclosure to ensure components remained secure during interaction.</li>
+            <li><strong>Critical Problem Solving:</strong> Led the decision to pivot from ultrasonic sensors to limit switches for the "Place It" command to eliminate signal noise.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h5>Technical Specifications</h5>
+          <ul>
+            <li><strong>Central Processor:</strong> ATMega32 Microcontroller.</li>
+            <li><strong>Input Sensors:</strong> Analog Joystick (Tug), Red Push Button (Dig), SPDT Limit Switches (Place).</li>
+            <li><strong>User Feedback:</strong> 16x2 LCD Screen and Piezo Buzzer.</li>
+            <li><strong>Power System:</strong> 5V Regulated supply with noise filtering for analog lines.</li>
+            <li><strong>Enclosure:</strong> Custom-designed plywood housing with sliding joinery.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h4>2. Advanced Hardware Implementation</h4>
+      <p>
+        The hardware design required precise coordination between the electrical circuit and the physical enclosure. I utilized industry-standard tools to create a professional-grade prototype.
+      </p>
+      
+      <div class="tech-grid">
+        <div class="card">
+          <h5>PCB Engineering & Layout</h5>
+          <p>
+            I designed a custom PCB to serve as the central hub for the game, replacing a chaotic web of wires with a reliable, manufactured board.
+          </p>
+          <ul>
+            <li><strong>Signal Routing:</strong> Routed traces to separate the noise-sensitive analog joystick signals from the high-frequency digital lines of the LCD and buzzer.</li>
+            <li><strong>Component Interface:</strong> Implemented modular headers for all external sensors. This design choice allowed us to mount sensors on the enclosure walls and run wires back to the PCB cleanly.</li>
+            <li><strong>Stability:</strong> Included necessary pull-down resistors and decoupling capacitors directly on the board to ensure stable logic levels for the ATMega32.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h5>Engineering Challenge: Sensor Reliability</h5>
+          <p>
+            A major engineering hurdle occurred with the "Place It" command.
+          </p>
+          <ul>
+            <li><strong>The Problem:</strong> We initially planned to use an ultrasonic sensor to detect when the ball was placed. However, testing revealed that the sensor was unreliable due to signal scattering from the ball's curved surface.</li>
+            <li><strong>The Solution:</strong> I re-engineered the input to use a <strong>Limit Switch</strong> mechanism. I designed a physical lever arm that triggers the switch when the ball drops. This mechanical approach provided a clean, binary signal (High/Low) that was far more reliable than the ultrasonic data, ensuring the game functioned correctly every time.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="image-gallery">
+        <div class="gallery-item">
+          <img src="images/Bark_it/bark%20it%20schematic.png" alt="Bark It System Schematic">
+          <div class="caption">1. System Schematic: Interfacing ATMega32 with Joystick, Limit Switches, and LCD.</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/Bark_it/bark%20it%20pcb.png" alt="Bark It Custom PCB">
+          <div class="caption">2. Custom PCB Layout: Engineered for modularity with external sensor headers.</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h4>3. Sensor Integration & Functionality</h4>
+      <p>
+        The core of the project relies on interpreting physical actions into digital logic. Each command utilizes a specific sensor chosen for its mechanical properties.
+      </p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Command</th>
+            <th>Sensor Component</th>
+            <th>Hardware Implementation</th>
+            <th>Engineering Function</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Tug It</strong></td>
+            <td>Analog Joystick</td>
+            <td>Voltage Divider (X/Y Axis)</td>
+            <td>Detects directional movement when the rope is pulled. The joystick's internal potentiometers provide an analog voltage change read by the ATMega32 ADC.</td>
+          </tr>
+          <tr>
+            <td><strong>Dig It</strong></td>
+            <td>Large Push Button</td>
+            <td>Digital Input (Active Low)</td>
+            <td>A durable interface for paw presses. Wired with pull-up resistors to ensure a clean transition from High to Low voltage when actuated.</td>
+          </tr>
+          <tr>
+            <td><strong>Place It</strong></td>
+            <td>Limit Switch</td>
+            <td>Mechanical Trigger</td>
+            <td>Replaced unreliable ultrasonic sensors. The switch creates a physical break/make in the circuit when the ball's weight depresses the lever.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h4>4. Engineering Skills & Tools Applied</h4>
+      <div class="tech-grid">
+        <div class="card">
+          <h5>Hardware & Design</h5>
+          <div>
+            <span class="skill-tag">PCB Design (Altium)</span>
+            <span class="skill-tag">Schematic Capture</span>
+            <span class="skill-tag">Sensor Selection</span>
+            <span class="skill-tag">Circuit Prototyping</span>
+            <span class="skill-tag">Soldering & Assembly</span>
+            <span class="skill-tag">SolidWorks (Enclosure)</span>
+            <span class="skill-tag">Laser Cutting</span>
+          </div>
+        </div>
+        <div class="card">
+          <h5>System Integration</h5>
+          <div>
+            <span class="skill-tag">Signal Integrity</span>
+            <span class="skill-tag">Failure Analysis</span>
+            <span class="skill-tag">System Debugging</span>
+            <span class="skill-tag">Technical Documentation</span>
+            <span class="skill-tag">Team Collaboration</span>
+            <span class="skill-tag">Project Management</span>
+            <span class="skill-tag">Design Verification</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer style="text-align: center; padding: 60px 0; border-top: 1px solid var(--border-light); color: var(--text-secondary);">
+    <p>&copy; 2026 Rafik Ibrahim | Electrical Engineer</p>
+  </footer>
+
+</body>
+</html>
