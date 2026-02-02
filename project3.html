@@ -140,6 +140,18 @@
       color: var(--accent-cyan);
     }
 
+    /* MEDIA CONTROLS */
+    .intro-image-container {
+      width: 100%; 
+      max-width: 700px; 
+      margin: 0 auto 60px; /* Centered with bottom margin */
+      border-radius: 24px; overflow: hidden;
+      border: 1px solid var(--border-light);
+      box-shadow: 0 40px 80px rgba(0,0,0,0.7);
+    }
+    .intro-image-container img, .intro-image-container video { width: 100%; display: block; transition: transform 0.6s ease; }
+    .intro-image-container:hover img { transform: scale(1.02); }
+
     /* INFO CARDS (Glassmorphism) */
     .tech-grid {
       display: grid;
@@ -295,6 +307,10 @@
   <div class="container">
     
     <h3 style="margin-bottom: 40px;">Retro Multiplayer Game Console</h3>
+
+    <div class="intro-image-container">
+      <img src="images/retro game console project/retro game console.png" alt="Final Product: Retro Multiplayer Game Console">
+    </div>
 
     <section>
       <h4>1. Introduction & Motivation</h4>
